@@ -1,0 +1,46 @@
+ {% extends "base.html" %}
+{% block title %} WRITING BLOG PAGE :{% endblock %}
+{% block content %} 
+
+
+<h3>PLEASE WRITE YOUR BLOGS ...</h3>
+<form action="{{ url_for('blog.blog_write') }}" method="post">
+    
+
+
+    <label for="name" >NAME:</label>
+    <input name="name" id="name" type="text" required placeholder="ENTER NAME :"><br><br>
+
+
+
+    <textarea
+    id="blog"
+    name="blog"
+    rows="10"
+    cols="50"
+    placeholder="Write your blog here..."
+    required></textarea>
+
+    
+    <br><br>
+    <input type="submit" value="POST">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

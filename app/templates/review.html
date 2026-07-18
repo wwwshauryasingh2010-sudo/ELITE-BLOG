@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}View Blogs{% endblock %}
+
+{% block content %}
+
+<h1>All Blogs</h1>
+
+{% for blog in blogs %}
+
+    <div style="border:1px solid black; margin:20px; padding:15px;">
+        <h2>{{ blog.name }}</h2>
+
+        <p>{{ blog.blog }}</p>
+
+        <small>Written by {{ blog.name }}</small>
+    </div>
+
+{% else %}
+
+    <h2>No blog available... Please write one!</h2>
+
+{% endfor %}
+
+{% endblock %}

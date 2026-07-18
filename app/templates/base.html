@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} base page {% endblock %}</title>
+    <style>
+        body {padding: 20px; text-align: center; background-color: black;}
+        header {padding: 10px; background-color: rgb(53, 50, 50); text-decoration: none;}
+        main {padding: 10px; text-align: center; background-color: rgb(37, 35, 35);}
+        header{padding: 20px; background-color:  rgb(53, 50, 50);}
+        .btn {background-color: black;}
+        .btn:hover{background-color: bisque;}
+        
+        .foot {color: #D9DADB;}
+        .ma {color: #D9DADB;}
+        
+
+    </style>
+    
+    
+</head>
+<body>
+    <header>
+       <span class="headline"><h2><i>ELITE BLOGS ...</i></h2></span>
+       <nav><a href="{{ url_for('auth.login') }}">Login</a>
+
+<a href="{{ url_for('blog.view_blog') }}">Blogs</a>
+
+<a href="{{ url_for('blog.blog_write') }}">Write Blog</a>
+
+    </nav>
+    {% with message = get_flashed_messages() %}
+
+    {% for mess in message %}
+    <ul>
+        <li>{{mess}}</li>
+
+    </ul>
+    {% endfor %}
+    {% endwith %}
+
+
+    </header>
+
+
+
+
+  <div class="ma" ><main> {% block content %} default blank {% endblock %}</main></div>
+
+
+
+
+
+
+    <footer><div class="foot">
+       <p>@this website was made by ELITE VISION...<br>
+    @S.SINGH  </p> </div>
+    </footer>
+    
+</body>
+</html>
